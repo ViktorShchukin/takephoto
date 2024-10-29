@@ -24,13 +24,7 @@ class MainActivity : ComponentActivity() {
 
     private val requestPermissionLauncher =
         registerForActivityResult(
-            ActivityResultContracts.RequestPermission(),
-            { permission: Boolean ->
-                if (!permission) {
-                    Toast.makeText(baseContext, "I can't work without camera", Toast.LENGTH_SHORT)
-                }
-
-            })
+            ActivityResultContracts.RequestPermission()){}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,25 +36,5 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
-
-    public fun requestPermission(permission: String) {
-        requestPermissionLauncher.launch(permission)
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    TakephotoTheme {
-        Greeting("Android")
     }
 }
