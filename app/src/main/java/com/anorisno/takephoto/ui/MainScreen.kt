@@ -10,7 +10,7 @@ import com.google.accompanist.permissions.rememberPermissionState
 
 @OptIn(ExperimentalPermissionsApi::class)
 @Composable
-fun MainScreen(modifier: Modifier = Modifier) {
+fun MainScreen(modifier: Modifier = Modifier ) {
 
     val cameraPermission: PermissionState = rememberPermissionState(Manifest.permission.CAMERA)
 

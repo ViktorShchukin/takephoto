@@ -57,8 +57,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    // help to manage permissions in compose
     implementation(libs.accompanist.permissions)
 
+    // camera libs
     implementation (libs.androidx.camera.core)
     implementation (libs.androidx.camera.camera2)
     implementation (libs.androidx.camera.lifecycle)
@@ -66,5 +68,8 @@ dependencies {
 
     implementation (libs.androidx.camera.view)
     implementation (libs.androidx.camera.extensions)
+
+    // http client
+    implementation(libs.okhttp)
 
 }
