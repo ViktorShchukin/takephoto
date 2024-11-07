@@ -21,6 +21,7 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.anorisno.takephoto.tool.rotateBitmap
 import java.util.concurrent.Executors
 
 private const val TAG: String = "CameraScreen"
@@ -71,7 +72,7 @@ fun CameraContent(
                             .build()
                             .also {
                                 it.setAnalyzer(analyserExecutor) { image ->
-                                    val bitmap: Bitmap = image.toBitmap()
+                                    val bitmap: Bitmap = image.toBitmap().rotateBitmap(image.imageInfo.rotationDegrees)
                                     imageConsumer(bitmap)
                                     image.close()
                                 }
